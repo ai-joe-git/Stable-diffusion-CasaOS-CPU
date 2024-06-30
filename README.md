@@ -15,13 +15,13 @@ This repository provides a YAML configuration file for easy installation of Stab
 
 ## Installation
 
-1. Download the `stable-diffusion-cpu.yml` file from this repository.
+1. Download the [stable-diffusion-cpu.yml](https://github.com/ai-joe-git/Stable-diffusion-CasaOS-CPU/blob/main/stable-diffusion-cpu.yml) file from this repository.
 
 2. In your CasaOS dashboard, click the '+' button on the homepage.
 
 3. Choose "Custom Install".
 
-4. Upload the `stable-diffusion-cpu.yml` file you downloaded.
+4. Upload the [stable-diffusion-cpu.yml](https://github.com/ai-joe-git/Stable-diffusion-CasaOS-CPU/blob/main/stable-diffusion-cpu.yml) file you downloaded.
 
 5. Follow the on-screen instructions to complete the installation.
 
