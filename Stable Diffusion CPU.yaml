@@ -1,0 +1,51 @@
+name: icewhale-stable-diffusion-webui
+services:
+  icewhale-stable-diffusion-webui:
+    cpu_shares: 90
+    command: []
+    container_name: icewhale-stable-diffusion-webui
+    deploy:
+      resources:
+        limits:
+          memory: 15771M
+        reservations:
+          memory: "536870912"
+    environment:
+      - COMMANDLINE_ARGS=--precision full --no-half --skip-torch-cuda-test
+        --use-cpu all --listen --enable-insecure-extension-access
+    hostname: icewhale-stable-diffusion-webui
+    image: johnguan/stable-diffusion-webui:latest
+    ipc: host
+    labels:
+      icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/StableDiffusionWebUI/icon.png
+    ports:
+      - target: 7860
+        published: "7860"
+        protocol: tcp
+    restart: unless-stopped
+    volumes:
+      - type: bind
+        source: /DATA/AppData/Stable-Diffusion-WebUI/models
+        target: /data/models
+      - type: bind
+        source: /DATA/AppData/Stable-Diffusion-WebUI/outputs
+        target: /data/outputs
+      - type: bind
+        source: /DATA/AppData/Stable-Diffusion-WebUI/config
+        target: /data/config
+    devices: []
+    cap_add: []
+    network_mode: bridge
+    privileged: false
+x-casaos:
+  author: self
+  category: self
+  hostname: ""
+  icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/StableDiffusionWebUI/icon.png
+  index: /
+  is_uncontrolled: false
+  port_map: "7860"
+  scheme: http
+  store_app_id: icewhale-stable-diffusion-webui
+  title:
+    custom: Stable Diffusion
